@@ -140,3 +140,131 @@ Antes de comenzar, es necesario **descargar la ISO** del sistema operativo que s
 ✅ ¡Listo! Su USB ahora está preparado con Ventoy y puede usarlo para arrancar desde varias ISOs sin necesidad de reformatear.
 
 ---
+
+
+# 1.4) 💽 Estructura de Particiones de Disco
+La estructura de particiones de un disco es la forma en que el espacio de almacenamiento de
+un disco duro o SSD se divide en secciones lógicas, llamadas particiones. Cada partición actúa 
+como una unidad de almacenamiento independiente, lo que permite organizar los datos o instalar 
+diferentes sistemas operativos en el mismo disco.
+
+## 📂 Tipos de particiones
+
+Existen varios tipos de particiones, tanto a nivel físico como lógico. A continuación se describen los más comunes:
+
+### 1️⃣ Partición primaria
+- Es la partición básica que puede contener un sistema operativo.
+- Un disco duro puede tener hasta **cuatro particiones primarias**.
+- Solo **una de ellas** puede estar marcada como **activa** para iniciar el sistema operativo.
+- Si se requieren más de 4 particiones, se debe usar una partición extendida.
+
+### 2️⃣ Partición extendida
+- Es una partición especial que **no contiene datos directamente**.  
+- Actúa como un **contenedor** para otras particiones llamadas **lógicas**.
+- Solo puede haber **una partición extendida por disco**.
+- Dentro de ella, se pueden crear múltiples particiones lógicas.
+
+### 3️⃣ Partición lógica
+- Se crean dentro de la **partición extendida**.
+- Se usan para **almacenar datos** o incluso sistemas operativos adicionales.
+- No tienen el límite estricto de 4 particiones como las primarias.
+- Útiles cuando se requieren muchas particiones en un mismo disco.
+
+### 4️⃣ Partición activa
+- Es la partición que el sistema **BIOS/UEFI** usa para arrancar el sistema operativo.
+- Solo una puede estar activa por disco al mismo tiempo.
+- Normalmente corresponde a una **partición primaria**.
+
+### 5️⃣ Partición de sistema (System Partition)
+- Contiene los archivos necesarios para **iniciar el sistema operativo**.
+- Incluye archivos como el **cargador de arranque (boot loader)**.
+
+### 6️⃣ Partición de arranque (Boot Partition)
+- Contiene los archivos del **sistema operativo** (ejemplo en Windows: la carpeta `\Windows`).
+- En algunos sistemas coincide con la partición de sistema, en otros están separadas.
+
+### 7️⃣ Partición OEM (Original Equipment Manufacturer)
+- Usada por fabricantes para almacenar **herramientas de recuperación o diagnósticos**.
+- Normalmente está **oculta** al usuario común.
+
+### 8️⃣ Partición de recuperación
+- Contiene una **imagen del sistema de fábrica** o herramientas para restaurar el sistema operativo.
+- También suele estar **oculta** al usuario.
+
+La **estructura de particiones** de un disco es la forma en que el espacio de almacenamiento de un disco duro o SSD se divide en secciones lógicas llamadas **particiones**.  
+Cada partición actúa como una unidad de almacenamiento independiente, lo que permite **organizar los datos** o incluso **instalar diferentes sistemas operativos** en un mismo disco.
+
+Los dos esquemas de particiones más comunes son **MBR** y **GPT**.  
+La elección entre uno y otro depende principalmente del tipo de firmware de tu computador (**BIOS o UEFI**) y de las necesidades de almacenamiento.
+
+---
+
+## 📜 Master Boot Record (MBR)
+
+El **MBR** es el esquema de particiones más antiguo y tradicional, creado en **1983**.  
+Su nombre proviene de su ubicación en el **primer sector del disco**, que contiene tanto el **bootloader** (código de arranque) como la **tabla de particiones**.
+
+### 🔹 Tipos de particiones y limitaciones
+
+- **Particiones primarias:**  
+  Puede tener un máximo de **cuatro particiones primarias**. Una partición primaria es una sección ejecutable que puede contener un sistema operativo.
+
+- **Particiones extendidas y lógicas:**  
+  Para superar el límite de cuatro particiones, una de las primarias puede convertirse en una **partición extendida**, que funciona como contenedor de múltiples **unidades lógicas**.
+
+- **Límite de tamaño:**  
+  No gestiona discos superiores a **2 TB**. Todo espacio adicional será **invisible** para el sistema.
+
+- **Punto de fallo único:**  
+  No tiene mecanismos de **redundancia**. Si el sector del MBR se corrompe, se pierde la información de todas las particiones, causando una **falla catastrófica**.
+
+✅ **Compatibilidad:**  
+MBR es compatible con sistemas antiguos que utilizan firmware **BIOS**.
+
+---
+
+## 💻 GUID Partition Table (GPT)
+
+El **GPT** es el esquema de particiones más moderno, desarrollado como parte de la especificación **UEFI (Unified Extensible Firmware Interface)**, con el objetivo de superar las limitaciones del MBR.  
+Hoy en día es el **estándar en la mayoría de los computadores y sistemas operativos modernos**.
+
+### 🔹 Estructura y características principales
+
+- **GUIDs (Identificadores Únicos Globales):**  
+  Cada partición recibe un identificador único, lo que evita conflictos y facilita la gestión del sistema operativo.
+
+- **Encabezado y copia de seguridad:**  
+  A diferencia del MBR que almacena todo en un único sector, GPT guarda el encabezado al inicio **y una copia de respaldo al final del disco**, ofreciendo mayor seguridad frente a fallos.
+
+- **Soporte UEFI:**  
+  Está diseñado para funcionar de manera nativa con firmware **UEFI**, requisito fundamental para funciones modernas como **arranque seguro**.
+
+### 📈 Ventajas clave sobre MBR
+
+- **Sin límite de tamaño:**  
+  Soporta discos de hasta **8 Zettabytes (ZB)**, eliminando la restricción de 2 TB.
+
+- **Más particiones:**  
+  Permite crear hasta **128 particiones primarias** por defecto, sin necesidad de particiones extendidas o lógicas.
+
+- **Mayor resistencia:**  
+  Gracias a la **copia de seguridad de la tabla de particiones**, es mucho más tolerante a fallos.
+
+- **Arranque seguro (Secure Boot):**  
+  Compatible con funciones de seguridad avanzadas del UEFI, protegiendo contra malware que intente ejecutarse durante el arranque.
+
+---
+
+## 📊 Comparación rápida: MBR vs GPT
+
+| Característica            | 📝 MBR                                   | 💻 GPT                                    |
+|---------------------------|------------------------------------------|--------------------------------------------|
+| Año de creación           | 1983                                     | 2000 (UEFI)                                |
+| Tamaño máximo soportado   | 2 TB                                     | 8 Zettabytes (ZB)                          |
+| Número de particiones     | Máx. 4 primarias (o extendida + lógicas) | Hasta 128 primarias (sin extendidas)       |
+| Redundancia               | ❌ No                                    | ✅ Sí, con copia de seguridad             |
+| Compatibilidad            | BIOS                                     | UEFI (moderno)                             |
+| Seguridad (Secure Boot)   | ❌ No                                    | ✅ Sí                                     |
+
+---
+
