@@ -141,6 +141,39 @@ Antes de comenzar, es necesario **descargar la ISO** del sistema operativo que s
 
 ---
 
+## 1.2) Bootloader (En memoria booteble) y que es un GRUB
+### 📌 Para que sirve un Bootloader en la memoria Booteble
+
+Un **bootloader** es un programa almacenado en una memoria booteable, como un **USB** o un **disco duro**. Su fucnion principal es **ejecutarse al encender el dispositivo** y encargarse de **cargar el sistema operativo o firmware en la RAM**, permitiendo asi que el sistema pueda arrancar. En pocas palabras, actua como un **intermediario** que facilita que el sistema operativo asuma el control del hardware.
+
+1.2.1. 🚀 **Funcion Principal**
+* Es el encargado de **ubicar y transferir el sistema operativo o firmware a la memoria RAM** del dispositivo, lo que permite que este pueda ejecutarse correctamente.
+
+1.2.2 🟢 **Proceso de Arranque**
+* Al encender el dispositivo, el firmware (generalmente ubicado en la **BIOS** o **UEFI**) se encarga de **buscar un dispositivo de arranque**. Cuando lo encuentra, procede a **cargar el bootloader en la memoria RAM**.
+
+> En conclusion, el bootloader cumple un papel fundamental en el arranque de cualquier dispositivo, ya que garantiza que el sistema operativo se cargue de forma correcta. Ademas, brinda la flexibilidad de seleccionar que sistema operativo o version ejecutar.
+
+
+---
+
+### 📌 Que es el GRUB
+
+GRUB (siglas en español: *GRand Unified Bootloader*) es un **gestor de arranque** que ofrece la posibilidad de **Seleccionar que sistema operativo cargar** en un equipo con multiples sistemas instalados. Tambien puede utilizarse en computadoras con un solo sistema, pero con **distintas opciones de inicio**. En terminos simples, es el programa que se **ejecuta inmediatamente despues de encender la computadora y antes de cargar el sistema operativo**.
+
+* **🎯 Funcion Principal:**
+
+Tiene la funcion de **cargar el nucleo (kernel) del sistema operativo en la memoria** y luego **cederle el control** para que el sistema pueda iniciar su ejecucion.
+
+* 🔀 **Arrancador Multiple:**
+
+Este gestor de arranque brinda la posibilidad de **elegir entre distintos sistemas operativos** (como **Windows**, **Linux**, etc.) o incluso **diferentes configuraciones dentro de un mismo sistema operativo**.
+
+## ❗ Importante
+
+Sin un **gestor de arranque** como **GRUB**, la computadora no tendria forma de **saber que sistema operativo debe cargar** y, en consecuencia, **no podria iniciar correctamente**.
+
+---
 
 # 1.4) 💽 Estructura de Particiones de Disco
 La estructura de particiones de un disco es la forma en que el espacio de almacenamiento de
