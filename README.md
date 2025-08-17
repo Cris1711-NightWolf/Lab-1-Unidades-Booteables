@@ -326,16 +326,16 @@ Ventoy crea dos particiones en la unidad USB: una para el arranque seguro («VTO
 
 
 
-## 3) Instalacion de ubuntu con Ventoy
+## 3) Instalación de Ubuntu con Ventoy
 
-
-# 🐧 Instalación de Ubuntu paso a paso con particionado del disco
+# 🐧 Instalación de Ubuntu y Windows en Dual Boot usando Ventoy
 
 Este apartado describe de manera clara y organizada el proceso que un usuario debe seguir para instalar **Ubuntu** en un PC, utilizando **Ventoy** para arrancar desde una memoria USB booteable y configurando correctamente el particionado del disco.
 
 ---
 
 ## 🔹 Requisitos previos
+
 Antes de comenzar, es necesario contar con lo siguiente:
 
 - ✅ Espacio libre en el disco duro (mínimo recomendado: **25–100 GB**, según las necesidades del usuario).  
@@ -349,15 +349,18 @@ Antes de comenzar, es necesario contar con lo siguiente:
 ## 1️⃣ Liberar espacio en el disco (Particionamiento en Windows)
 
 1. El usuario debe abrir la herramienta de particionamiento en Windows.  
-   Para ello, en el menú de inicio se escribe **“Particiones”** y se selecciona **“Crear y formatear particiones del disco duro”**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/1#issue-3328706270  
+   Para ello, en el menú de inicio se escribe **“Particiones”** y se selecciona **“Crear y formatear particiones del disco duro”**.
+
+   ![Image](https://github.com/user-attachments/assets/d26b07cf-0911-46a8-92a7-c3f19d6cb9a8)
 
 2. Sobre el disco donde se instalará Ubuntu, se hace clic derecho y se selecciona **“Reducir volumen”**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/2#issue-3328706631
+
+   ![Image](https://github.com/user-attachments/assets/f24c6c8b-3331-4f9f-87ec-5935953e7b44)
 
 3. En la ventana emergente, se especifica la cantidad de espacio a liberar (por ejemplo: **40 GB = 40,000 MB**) y se confirma con **Reducir**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/3#issue-3328707031
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/4#issue-3328707382
+
+   ![Image](https://github.com/user-attachments/assets/5cb2bcd0-6723-4057-8015-6de613a2890b)  
+   ![Image](https://github.com/user-attachments/assets/8597a97c-a153-4780-b592-cb8dd67bbb03)
 
 Si el procedimiento se realizó correctamente, quedará disponible el espacio libre en el disco.
 
@@ -367,22 +370,25 @@ Si el procedimiento se realizó correctamente, quedará disponible el espacio li
 
 1. Se inserta la memoria USB con **Ventoy** y se reinicia el PC.  
 2. Durante el encendido, el usuario debe presionar la tecla correspondiente para acceder al menú de arranque (generalmente **F2, F10, F11 o ESC**, dependiendo del hardware).  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/5#issue-3328708294  
 
-3. En el menú de arranque, se accede a **Boot Options** y se coloca la **USB en primera posición** (para que el pc priorice el arranque con la usb) utilizando las teclas (por ejemplo: **F5/F6**).  
-   
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/6#issue-3328708841
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/7#issue-3328709769
+   ![Image](https://github.com/user-attachments/assets/b6bc267c-d9d5-4627-9b14-8c6f8c010cf2)  
 
-5. Si aparece la opción **Secure Boot**, esta debe desactivarse para evitar inconvenientes con la instalación de Ubuntu.
-   El security boot que es otra capa importante que tienen las computadoras, esto suele traer problemas para instalar otro sistema operativo que no sea Windows,
-   por ende, la solución mas rápida es desactivar esta opción
-   > **Nota**
-> - Al hacer esto se esta desactivando una capa de seguridad adicional en el pc*.
- 
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/8#issue-3328710204
+3. En el menú de arranque, se accede a **Boot Options** y se coloca la **USB en primera posición** utilizando las teclas (por ejemplo: **F5/F6**).  
 
-6. Finalmente, se guardan los cambios (**F10**) y el PC iniciará desde la memoria USB con Ventoy.
+   ![Image](https://github.com/user-attachments/assets/f744b54a-2f38-47f4-9f51-2dc66f13af85)  
+   ![Image](https://github.com/user-attachments/assets/0fb826ab-a487-4d0a-9f34-39fddaf9b264)
+
+4. Si aparece la opción **Secure Boot**, esta debe desactivarse para evitar inconvenientes con la instalación de Ubuntu.  
+
+   El **Secure Boot** es una capa de seguridad que puede impedir la instalación de sistemas distintos a Windows.  
+   Por ello, la solución más rápida es desactivar esta opción.  
+
+   > **Nota:**  
+   > - Al desactivar Secure Boot se elimina una capa adicional de seguridad del equipo.
+
+   ![Image](https://github.com/user-attachments/assets/e7520437-5390-4482-a301-1c2b4e84ff53)
+
+5. Finalmente, se guardan los cambios (**F10**) y el PC iniciará desde la memoria USB con Ventoy.
 
 ---
 
@@ -390,42 +396,50 @@ Si el procedimiento se realizó correctamente, quedará disponible el espacio li
 
 1. Una vez cargado Ventoy, se muestra un menú con las ISOs almacenadas en la memoria.  
 2. El usuario debe seleccionar la ISO de **Ubuntu** y presionar **Enter**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/9#issue-3328710396
+
+   ![Image](https://github.com/user-attachments/assets/59b31d8b-93f2-440c-9b49-b0c275e0c75c)
 
 3. A continuación, el instalador ofrece la opción **“Try or Install Ubuntu”**. Esta debe seleccionarse y confirmarse con **Enter**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/10#issue-3328710657
+
+   ![Image](https://github.com/user-attachments/assets/f0e15722-f43f-470a-b517-cf44104d2bd5)
 
 ---
 
 ## 4️⃣ Configuración inicial de instalación
 
-1. El instalador solicita la configuración inicial,por ejemplo, de idioma y de la **conexión WiFi** (recomendado, ya que permite descargar actualizaciones y software adicional).  
+1. El instalador solicita la configuración inicial, como el idioma y la **conexión WiFi** (recomendado para descargar actualizaciones y software adicional).  
 2. Se recomienda activar las siguientes casillas:  
    - ✅ Descargar actualizaciones durante la instalación.  
-   - ✅ Instalar software de terceros para multimedia y controladores.
-   - Ya que al activar estas dos casillas tendremos el sistema actualizado e instalara codex necesarios para la reproducción multimedia y algunos controladores.
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/11#issue-3328710934
+   - ✅ Instalar software de terceros para multimedia y controladores.  
+
+   Con estas opciones activadas, el sistema quedará actualizado y con códecs necesarios para multimedia y drivers.  
+
+   ![Image](https://github.com/user-attachments/assets/3c7e1ce1-c279-4e11-ae4d-eee8c77e9564)
 
 ---
 
 ## 5️⃣ Particionado manual del disco en Ubuntu
 
-⚠️ **Importante:** Se recomienda realizar una copia de seguridad de los datos antes de efectuar cambios en el disco.
+⚠️ **Importante:** Se recomienda realizar una copia de seguridad antes de modificar las particiones del disco.  
 
 El paso más importante es el **particionado del disco**.  
-Aunque Ubuntu ofrece opciones automáticas, en este caso se recomienda un particionado **manual** para un mayor control.
- > **Nota**
-> - Hoy en dia las distribuciones de Linux ya tienen muy bien automatizada esta parte*.
-> - Hay distinas maneras de hacer el particionamiento, en esta ocasión usaremos las mas básicas para el funcionamiento de Ubuntu.
+Aunque Ubuntu ofrece opciones automáticas, en este caso se sugiere un particionado **manual** para un mayor control.  
+
+> **Nota:**  
+> - Actualmente, las distribuciones de Linux ya tienen muy bien automatizada esta parte.  
+> - Existen diferentes métodos de particionamiento, pero aquí se muestran las opciones más básicas para Ubuntu.  
 
 1. El usuario debe seleccionar la opción **Instalación manual (Something else)**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/12#issue-3328711216
-   
-A continuación se muestra una tabla general sobre las particiones basicas que necesitaremos crear para el correcto funcionamiento de ubuntu:
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/13#issue-3328711613
 
-3. En la ventana de particionado, se localiza el espacio libre creado en Windows y se comienza a crear las particiones utilizando el botón **“+”**.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/14#issue-3328711901
+   ![Image](https://github.com/user-attachments/assets/a3f40866-d5b9-4ec8-9760-a8b433854af6)
+
+A continuación se muestra una tabla general sobre las particiones básicas necesarias para Ubuntu:  
+
+   ![Image](https://github.com/user-attachments/assets/81fbf1ba-b538-4934-bbca-abadcf1ce82d)
+
+2. En la ventana de particionado, se localiza el espacio libre creado en Windows y se comienzan a crear las particiones con el botón **“+”**.  
+
+   ![Image](https://github.com/user-attachments/assets/80a9e4ca-e0f0-4836-a4cd-057c582da88f)
 
 ### 📌 Particiones recomendadas
 
@@ -435,20 +449,24 @@ A continuación se muestra una tabla general sobre las particiones basicas que n
 
 - **SWAP (Memoria de intercambio):**  
   - Funciona como memoria virtual cuando la RAM se agota.  
-  https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/15#issue-3328712456
+
+  ![Image](https://github.com/user-attachments/assets/80a41095-2794-46ab-8b98-a4930b3980ea)
 
 - **/ (Raíz):**  
   - Obligatoria. Contiene el sistema y las aplicaciones.  
   - Se recomienda asignar al menos **20–30 GB**.  
-  https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/16#issue-3328712781
+
+  ![Image](https://github.com/user-attachments/assets/80359073-6b54-45a5-b3a0-a73fe19bc886)
 
 - **/home (Opcional):**  
   - Almacena documentos, fotos, música y demás archivos personales.  
   - Si no se crea, los archivos se guardarán dentro de la carpeta personal en la raíz.  
-  https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/17#issue-3328713072 
+
+  ![Image](https://github.com/user-attachments/assets/62b45825-6998-44c8-9098-cf729a8cb027)
 
 3. Una vez creadas las particiones, se debe seleccionar el **cargador de arranque (GRUB)** en el mismo disco donde se realizó el particionado.  
-   https://github.com/Cris1711-NightWolf/Lab-1-Unidades-Booteables/issues/18#issue-3328713413 
+
+   ![Image](https://github.com/user-attachments/assets/7647aae6-b095-46b0-b43a-5c363796107d)
 
 ---
 
@@ -459,9 +477,70 @@ A continuación se muestra una tabla general sobre las particiones basicas que n
    - Zona horaria.  
    - Nombre de usuario.  
    - Contraseña de acceso.  
-
 3. Al finalizar, el sistema solicita reiniciar el equipo.  
 
 ✅ En este punto, Ubuntu queda instalado y listo para usarse junto con Windows.
 
+## 📖 Resumen del proceso realizado
+
+⚙️ Configuración en el equipo
+
+1. Se accedió al menú de la **BIOS/UEFI** al encender el computador.
+2. Se desactivó la opción de **Secure Boot** (en caso de incompatibilidades).
+3. Se estableció la memoria USB como primera opción de arranque.
+
 ---
+
+## 🚀 Proceso de arranque e instalación
+
+1. El computador se inició desde la memoria USB con Ventoy.
+2. Ventoy mostró un menú con las ISOs disponibles (Ubuntu y Windows).
+3. Se seleccionó la ISO de **Ubuntu** para comenzar su instalación.
+4. Durante la instalación, se escogió la opción de **particionado manual** para garantizar la coexistencia con Windows:
+   - Se definió la partición **Raiz**.
+   - Se definió la partición **swap**.
+   - Se definió la partición **Home**.
+   - Se dejó intacta la partición de Windows.
+5. Tras finalizar, el sistema instaló **GRUB** como gestor de arranque.
+
+---
+
+## 🔀 Dual Boot: Selección de sistemas operativos
+
+Después de la instalación, al reiniciar el equipo se cargó el menú de **GRUB**, permitiendo seleccionar entre:
+
+- **Ubuntu**
+- **Windows**
+
+Esto asegura que ambos sistemas pueden utilizarse de manera independiente según las necesidades del usuario.
+
+---
+
+## 📌 Recomendaciones posteriores a la instalación
+
+1. **En Ubuntu**  
+   - Ejecutar en terminal:
+     ```bash
+     sudo apt update && sudo apt upgrade -y
+     ```
+     para actualizar el sistema.
+   - Instalar controladores y software adicional necesario.
+
+2. **En Windows**  
+   - Verificar que las particiones no fueron alteradas.  
+   - Hacer una copia de seguridad en caso de futuras modificaciones.
+
+---
+
+## ⚠️ Problemas comunes y soluciones
+
+- **Windows no aparece en GRUB**  
+  Se puede instalar la herramienta `boot-repair` en Ubuntu para reconstruir el gestor de arranque.
+
+- **Error con Secure Boot**  
+  En la mayoría de casos funciona, pero si se presentan fallos de arranque, se recomienda desactivarlo.
+
+---
+
+---
+
