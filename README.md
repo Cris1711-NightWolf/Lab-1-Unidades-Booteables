@@ -204,19 +204,17 @@ La elección entre uno y otro depende principalmente del tipo de firmware de tu 
 El **MBR** es el esquema de particiones más antiguo y tradicional, creado en **1983**.  
 Su nombre proviene de su ubicación en el **primer sector del disco**, que contiene tanto el **bootloader** (código de arranque) como la **tabla de particiones**.
 
-### 🔹 Tipos de particiones y limitaciones
+Este es un esquema de particionamiento clásico que se introdujo con el IBM PC DOS en 1983. Se basa en un sector de arranque maestro que contiene la tabla de particiones
+y un pequeño programa de inicialización. Sus principales limitaciones son:   
 
-- **Particiones primarias:**  
-  Puede tener un máximo de **cuatro particiones primarias**. Una partición primaria es una sección ejecutable que puede contener un sistema operativo.
+- **Tamaño Máximo:** Solo puede direccionar discos de hasta 2 terabytes (TB). Cualquier espacio adicional en un disco de mayor capacidad no podría ser utilizado.   
 
-- **Particiones extendidas y lógicas:**  
-  Para superar el límite de cuatro particiones, una de las primarias puede convertirse en una **partición extendida**, que funciona como contenedor de múltiples **unidades lógicas**.
+- **Límite de Particiones:** Se restringe a un máximo de cuatro particiones primarias por disco. Para superar esto, se implementó la partición extendida como un contenedor.   
 
-- **Límite de tamaño:**  
-  No gestiona discos superiores a **2 TB**. Todo espacio adicional será **invisible** para el sistema.
+- **Vulnerabilidad:** La tabla de particiones se almacena en una única ubicación al principio del disco, lo que la hace susceptible a la corrupción o a fallos, sin un mecanismo de respaldo incorporado.   
 
-- **Punto de fallo único:**  
-  No tiene mecanismos de **redundancia**. Si el sector del MBR se corrompe, se pierde la información de todas las particiones, causando una **falla catastrófica**.
+- **Compatibilidad:** Se asocia directamente con el firmware BIOS para el proceso de arranque.   
+
 
 ✅ **Compatibilidad:**  
 MBR es compatible con sistemas antiguos que utilizan firmware **BIOS**.
@@ -260,7 +258,7 @@ Hoy en día es el **estándar en la mayoría de los computadores y sistemas oper
 | Característica            | 📝 MBR                                   | 💻 GPT                                    |
 |---------------------------|------------------------------------------|--------------------------------------------|
 | Año de creación           | 1983                                     | 2000 (UEFI)                                |
-| Tamaño máximo soportado   | 2 TB                                     | 8 Zettabytes (ZB)                          |
+| Tamaño máximo soportado   | 2 TB                                     | 9,4 Zettabytes (ZB)                        |
 | Número de particiones     | Máx. 4 primarias (o extendida + lógicas) | Hasta 128 primarias (sin extendidas)       |
 | Redundancia               | ❌ No                                    | ✅ Sí, con copia de seguridad             |
 | Compatibilidad            | BIOS                                     | UEFI (moderno)                             |
