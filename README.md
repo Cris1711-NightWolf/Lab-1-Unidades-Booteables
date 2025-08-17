@@ -266,3 +266,29 @@ Hoy en día es el **estándar en la mayoría de los computadores y sistemas oper
 
 ---
 
+## 2) Descargar la imagen de Ubuntu y la imagen de Windows.
+
+# 📀 Cargar Imágenes ISO en Ventoy (Ubuntu y Windows)
+
+**Copiar las imágenes ISO**  
+Ventoy crea dos particiones en la unidad USB: una para el arranque seguro («VTOYEFI») y otra totalmente vacía en la que arrastrar y soltar las ISO
+   - Descargar las ISOs oficiales:  
+     - [Ubuntu](https://ubuntu.com/download)  
+     - [Windows](https://www.microsoft.com/software-download/windows11)  
+   - Copiar los archivos `.iso` directamente dentro de la memoria USB (no es necesario descomprimirlos ni usar herramientas adicionales).
+
+3. **Arrancar desde Ventoy**  
+   - Conectar la memoria USB en el computador.  
+   - Ingresar al menú de arranque (Boot Menu, usualmente con las teclas `F12`, `Esc` o `F10`).  
+   - Seleccionar la memoria USB con Ventoy.  
+   - Ventoy mostrará un menú con todas las ISOs copiadas.  
+   - Elegir **Ubuntu** o **Windows** y continuar con la instalación o modo Live.
+
+---
+
+## ✅ Ventajas del método
+- No es necesario volver a formatear la memoria para agregar nuevas ISOs.  
+- Se pueden tener varias distribuciones y versiones de sistemas operativos en la misma USB.  
+- Compatible con BIOS y UEFI.  
+
+
