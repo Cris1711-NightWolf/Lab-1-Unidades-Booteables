@@ -450,6 +450,22 @@ Ventoy crea dos particiones en la unidad USB: una para el arranque seguro («VTO
 - Compatible con BIOS y UEFI.  
 
 
+---
+
+## 🔍 Comparativa: Ventoy vs Rufus
+
+| Característica                  | Ventoy 🟢 | Rufus 🟢/❌ |
+|---------------------------------|-----------|------------|
+| Permite varias ISOs en la misma USB | 🟢 | ❌ |
+| No requiere formatear para nuevas ISOs | 🟢 | ❌ |
+| Compatible con BIOS y UEFI       | 🟢 | 🟢 |
+| Facilidad de uso                 | 🟢 | 🟢 |
+| Rapidez en creación inicial      | 🟢 | 🟢 |
+| Estabilidad y confiabilidad      | 🟢 | 🟢 |
+| Ideal para una sola instalación  | ❌ | 🟢 |
+
+---
+
 
 ## 3) Instalación de Ubuntu con Ventoy
 
