@@ -386,6 +386,46 @@ Hoy en día es el **estándar en la mayoría de los computadores y sistemas oper
 
 ## 2) Descargar la imagen de Ubuntu y la imagen de Windows.
 
+## 🔧 Cargar Imagen ISO en Rufus (Ubuntu)
+
+### 📄📄 Copiar la Imagen ISO con Rufus
+Rufus no funciona como Ventoy (que permite varias ISOs), sino que crea un USB **booteable** a partir de una unica imagen ISO. 
+Para usarlo:
+
+1. Descargar Rufus desde la pagina oficial: [Rufus](https://rufus.ie).
+2. Conectar la memoria USB al computador.
+3. Abrir Rufus y seleccionar:
+   - **Dispositivo:** tu memoria USB.
+   - **Seleccion de arranque:** Elegir la ISO de **Ubuntu** descargada.
+   - **Sistema de destino:** BIOS o UEFI.
+4. Jacer clic en **Empezar** y esperar a que finalice el proceso (esto borrara el contenido de la USB).
+
+---
+
+### ▶️ Arrancar desde Rufus
+1. Conectar la memoria USB creada con Rufus.
+2. Ingresar al menu de arranque (usualmente con las teclas "F12", "Esc" o "F10").
+3. Seleccionar la memoria USB con Ubuntu.
+4. El sistema arrancara directamente en la instalacion o modo Live de Ubuntu.
+
+---
+
+## ✅ Ventajas del metodo (Rufus)
+- Facil de usar y rapido en la creacion de USBs booteables.
+- Muy estable y confiable.
+- Compatible con la mayoria de sistemas (BIOS y UEFI).
+- Ideal para preparar una sola instalacion.
+
+---
+
+## ❌ Desventajas del metodo (Rufus)
+- Solo se puede grabar **una ISO por memoria USB** (*si quieres otra, debes formatear*).
+- No permite mantener varias distribuciones en un mismo USB.
+- Cada vez que quieras cambiar la ISO debes rehacer el proceso.
+
+---
+
+
 # 📀 Cargar Imágenes ISO en Ventoy (Ubuntu y Windows)
 
 **Copiar las imágenes ISO**  
