@@ -175,6 +175,91 @@ Sin un **gestor de arranque** como **GRUB**, la computadora no tendria forma de 
 
 ---
 
+# 1.3) 📂 Sistemas de Archivos Compatibles
+Los sistemas de archivos compatibles son aquellos que un **sistema operativo puede identificar y usar** para **organizar y acceder a los datos** en un medio de almacenamiento. Cabe destacar que **no todos los sistemas de archivos son compatibles entre si**, ya que la compatibilidad depende tanto del **sistema operativo** como del **dispositivo de almacenamiento**.
+
+---
+
+## 🗂️ Tipos de archivos
+
+Existen diferentes tipos de archivos y su compatibilidad de cada uno de ellos:
+
+### 1️⃣ FAT32
+Un sistema de archivos con mucha antiguedad pero aun ampliamente usado por su compatibilidad.
+**Caracteristicas Principales:**
+- **🌐 Alta Compatibilidad:** Funciona en la mayoria de los sistemas operativos (*Windows, macOS, Linux*) y dispositivos (*consolas, camaras, etc*).
+- **📏 Limitacion de Tamaño:** No permite archivos individuales mayores a **4 GB.**
+- Adecuado para memorias USB y tarjetas SD de baja y media capacidad.
+- Al ser un formato antiguo, carece de funciones modernascomo seguridad avanzada o registro de errores.
+
+### 2️⃣ exFAT
+Es una evolucion del sistema FAT32 que soluciona sus principales limitaciones y esta diseñado para dispositivos de almacenamiento de gran capacidad.
+**Caracteristicas Principales:**
+- **🔓 Elimina la restriccion de 4 GB:** Permite manejar archivos de mayor tamaño.
+- **🤝 Compatibilidad:** Funciona en **Windows, macOS** y en **Linux** (*a partir de versiones recientes*).
+- **Ideal para dispositivos extraibles grandes**, como memorias USB y tarjetas SD de alta capacidad.
+- Ofrece un rendimiento mas eficiente que FAT32 en unidades de gran tamaño.
+
+### 3️⃣ NTFS
+Es el sistema de archivos predeterminado en Windows, diseñado para manejar archivos grandes y ofrecer mayor seguridad que formatos mas antiguos.
+**Caracteristicas Principales:**
+- **Soporte para archivos de gran tamaño** sin las limitaciones de FAT32.
+- **🛡️ Seguridad Avanzada:** Permite asginar **permisos y cifrado a nivel de archivo**.
+- **🔗 Compatibilidad:**
+  * En **Windows**, funciona de forma nativa con lectura y escritura.
+  * En **macOS**, solo permite **lectura** de unidades NTFS; para **escritura** se requiere software adicional.
+  * En **Linux**, es compatible con herramientas especificas como *ntfs-3g*.
+- Recomendado para discos internos y externos cuando se usan principalmente en Windows.
+
+### 4️⃣ HFS+
+Es el sistema de archivos desarrollado por Apple para sus computadoras Mac, usado antes de la llegada de APFS.
+**Caracteristicas Principales:**
+- **🧩 Compatibilidad:**
+  * Funciona de forma nativa en **macOS**.
+  * En **Linux**, puede **leer y escribir** con soporte adicional.
+  * En **Windows**, unicamente permite **lectura** a menos que se instale software especializado.
+- Diseñado para el ecosistema Apple, con soporte para archivos grandes y organizacion eficiente.
+- Ha sido reemplazado progresivamente por **APFS** en versiones mas recientes de macOS.
+
+### 5️⃣ APFS
+Es el sistema de archivos mas moderno de Apple, creado para optimizar el rendimiento en unidades de estado solido (*SSD*).
+**Carecteristicas Principales:**
+- **Optimizado para SSD**, aunque tambien funciona en discos duros y dispositivos externos.
+- **Soporta cifrado avanzado**, brindando mayor seguridad a los datos.
+- Diseñado para **dispositivos Apple recientes** como Mac, iPhone, iPad y Apple Watch.
+- Mejora en la **gestion del espacio y la velocidad** en comparacion con HFS+.
+- No es compatible de forma nativa con **Windows** ni con la mayoria de distribuciones de **Linux**.
+
+### 6️⃣ EXT4
+Es el sistema de archivos por defecto en la mayoria de las distribuciones de Linux, ampliamente usado por su estabilidad y eficiencia.
+**Caracteristicas Principales:**
+- **Predeterminado en Linux**, lo que lo convierte en uno de los mas utilizados en sistemas de codigo abierto.
+- **Soporta archivos de gran tamaño**, y volumenes muy amplios.
+- **⚡ Compatibilidad:**
+  * En **Linux**, lectura y escritura nativa.
+  * En **Windows** y **macOS**, requiere **software de terceros** para poder acceder a las unidades.
+- Ofrece un buen equlibrio entre **rendimiento, estabilidad y seguridad**.
+
+### Comparativa visual de sistemas de archivos
+
+| Sistema | Compatibilidad amplia | Archivos grandes | Seguridad avanzada | Optimizado para SSD |
+|---------|------------------------|------------------|--------------------|----------------------|
+| **FAT32** | ✅ | ❌ | ❌ | ❌ |
+| **exFAT** | ✅ | ✅ | ❌ | ❌ |
+| **NTFS** | ⚠️ (solo Windows completo) | ✅ | ✅ | ❌ |
+| **HFS+** | ⚠️ (principalmente macOS) | ✅ | ❌ | ❌ |
+| **APFS** | ❌ (solo Apple) | ✅ | ✅ | ✅ |
+| **EXT4** | ⚠️ (nativo Linux) | ✅ | ✅ | ❌ |
+
+---
+
+### 🔎 Leyenda
+- ✅ → Cumple totalmente con la característica.  
+- ❌ → No soporta la característica.  
+- ⚠️ → Tiene compatibilidad o soporte limitado (funciona solo en ciertos sistemas operativos o requiere software adicional).  
+
+---
+
 # 1.4) 💽 Estructura de Particiones de Disco
 La estructura de particiones de un disco es la forma en que el espacio de almacenamiento de
 un disco duro o SSD se divide en secciones lógicas, llamadas particiones. Cada partición actúa 
