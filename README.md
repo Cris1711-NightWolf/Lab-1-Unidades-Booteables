@@ -683,5 +683,18 @@ Esto asegura que ambos sistemas pueden utilizarse de manera independiente según
 
 ---
 
+## 📚 Bibliografía y Referencias
+
+* *Microsoft Docs:* [Partitioning a hard drive to prepare it for Windows](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/partition-hard-drive)
+* *Canonical (Ubuntu):* [Partitioning your drive for Ubuntu](https://ubuntu.com/tutorials/tutorial-manual-partitioning-for-ubuntu)
+* *Wikipedia:* [GUID Partition Table](https://es.wikipedia.org/wiki/GUID_Partition_Table)
+* *Wondershare Recoverit:* [MBR vs GPT: What’s the Difference?](https://recoverit.wondershare.com/partition-tips/mbr-vs-gpt.html)
+* *IBM Docs:* [Partitioning (AIX 7.2.0)](https://www.ibm.com/docs/es/aix/7.2.0?topic=installing-partitioning)
+* *Microsoft Learn:* [Configure UEFI/GPT-based hard drive partitions](https://learn.microsoft.com/es-es/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions?view=windows-11)
+* *YouTube (SysAdmin Tutorial):* [Explicación sobre particiones MBR y GPT](https://www.youtube.com/watch?v=wIj7sHK0SkQ&t=340s)
+* *IONOS Digital Guide:* [Qué son los bootloaders](https://www.ionos.com/es-us/digitalguide/servidores/configuracion/que-son-los-bootloaders/)
+* *Lazarus Tech:* [Qué es el GRUB y cómo se configura](https://www.lazarus.com.ve/que-es-el-grub-y-como-se-configura/)
+* *IONOS Digital Guide:* [Sistemas de archivos](https://www.ionos.com/es-us/digitalguide/servidores/know-how/sistemas-de-archivos/)
+
 ---
 
